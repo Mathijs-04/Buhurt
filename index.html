@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buhurt</title>
+<meta name="description" content="Buhurt: full-contact armoured combat. Real steel, real armour, no choreography.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Grenze+Gotisch:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero.webp">
+<link rel="preload" as="image" href="assets/img/hero-cut.webp">
+<link rel="stylesheet" href="styles.css">
+<script>
+  // always start at the top after a reload: no restored scroll position, no jump to a #hash
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  window.scrollTo(0, 0);
+  addEventListener('beforeunload', () => window.scrollTo(0, 0));
+</script>
+</head>
+<body class="is-loading">
+
+<!-- ═══════════ global layers ═══════════ -->
+<div class="grain" aria-hidden="true"></div>
+<canvas id="sparks" aria-hidden="true"></canvas>
+
+<!-- ═══════════ loader ═══════════ -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <div class="loader__glyph">B</div>
+    <div class="loader__meta">
+      <span>Arming the knights</span>
+      <span class="loader__count">000</span>
+    </div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+  <div class="loader__panel loader__panel--a"></div>
+  <div class="loader__panel loader__panel--b"></div>
+</div>
+
+<!-- ═══════════ nav ═══════════ -->
+<header class="nav">
+  <a href="#top" class="nav__mark">Buhurt</a>
+  <nav class="nav__chapters" aria-label="Chapters">
+    <a href="#sport"><b>I</b>Sport</a>
+    <a href="#lex"><b>II</b>Rules</a>
+    <a href="#arma"><b>III</b>Weapons</a>
+    <a href="#armour"><b>IV</b>Armour</a>
+    <a href="#melee"><b>V</b>Melee</a>
+    <a href="#list"><b>VI</b>The List</a>
+  </nav>
+  <span></span>
+</header>
+
+<main>
+
+<!-- ═══════════ I. HERO ═══════════ -->
+<section class="hero" id="top" data-dark>
+  <div class="hero__sticky">
+    <div class="hero__stage">
+      <img class="hero__bg" src="assets/img/hero.webp" alt="Two armoured buhurt fighters locked together, one in a red tabard, one in black and white">
+      <div class="hero__title" aria-hidden="true"><span>Buhurt</span></div>
+      <img class="hero__cut" src="assets/img/hero-cut.webp" alt="">
+    </div>
+    <div class="hero__shade"></div>
+
+    <div class="hero__ui">
+      <div class="hero__top">
+        <p class="kicker"><span class="kicker__mark">✠</span> Chapter I &nbsp;/&nbsp; The steel sport</p>
+        <p class="hero__coords">MMXXVI<br>Full contact · No choreography</p>
+      </div>
+      <h1 class="sr-only">Buhurt</h1>
+      <div class="hero__bottom">
+        <div class="hero__scroll"><span>Scroll to enter the list</span><i></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ II. MANIFESTO ═══════════ -->
+<section class="manifesto vellum" id="sport">
+  <div class="wrap">
+    <header class="chapter-head">
+      <span class="chapter-head__num">I</span>
+      <span class="chapter-head__label">The Sport</span>
+      <span class="chapter-head__rule"></span>
+      <span class="chapter-head__aside">fol. 1r</span>
+    </header>
+
+    <p class="manifesto__text" data-words>
+      <span class="dropcap">B</span>uhurt is medieval combat, reborn as a modern full-contact sport.
+      <span class="pill pill--wide"><img src="assets/img/pill-duel.webp" alt="" draggable="false"></span>
+      Teams of knights in full harness walk into a wooden arena, the list, and try to put each other on the ground
+      <span class="pill pill--wide"><img src="assets/img/pill-clash.webp" alt="" draggable="false"></span>
+      with blunted steel,
+      <span class="pill pill--xwide"><img src="assets/img/pill-line.webp" alt="" draggable="false"></span>
+      shields and bare strength. Nothing is scored
+      <span class="pill"><img src="assets/img/pill-visor-close.webp" alt="" draggable="false"></span>
+      and nothing is staged. The side with fighters still standing wins.
+    </p>
+
+    <div class="folio">
+      <article class="folio__col">
+        <h3><span class="pilcrow">¶</span> The word</h3>
+        <p>From the Old French <em>béhourd</em>: a rough, informal kind of medieval tournament in which groups of knights clashed with blunted weapons, instead of riding at each other one pair at a time.</p>
+      </article>
+      <article class="folio__col">
+        <h3><span class="pilcrow">¶</span> The revival</h3>
+        <p>Steel combat came back in Russia, Ukraine and Belarus around the turn of the millennium. In 2010 four national teams fought the first <em>Battle of the Nations</em> at Khotyn Fortress in Ukraine.</p>
+      </article>
+      <article class="folio__col">
+        <h3><span class="pilcrow">¶</span> The sport today</h3>
+        <p>National teams from around thirty countries now meet at world championships. In July 2026 the IMCF world championship filled Spøttrup Castle in Denmark with close to six hundred fighters.</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- ledger of numbers -->
+  <div class="ledger" data-ledger>
+    <div class="ledger__row" data-img="assets/img/u-lion.webp">
+      <div class="ledger__num"><span data-count="30">30</span><sup>kg</sup></div>
+      <div class="ledger__body"><h4>Of steel per fighter</h4><p>Give or take: helm, plate, mail and gauntlets, with a quilted gambeson underneath to take the hits.</p></div>
+      <div class="ledger__tag">Armour</div>
+    </div>
+    <div class="ledger__row" data-img="assets/img/u-takedown.webp">
+      <div class="ledger__num"><span data-count="3">3</span><sup>pts</sup></div>
+      <div class="ledger__body"><h4>Points of contact</h4><p>Your feet are two. If a knee, hand or hip touches the sand, you are out of the fight.</p></div>
+      <div class="ledger__tag">Rule I</div>
+    </div>
+    <div class="ledger__row" data-img="assets/img/u-massbattle.webp">
+      <div class="ledger__num"><span data-count="5">5</span><sup>v5</sup></div>
+      <div class="ledger__body"><h4>Knights a side</h4><p>The classic team format at every major championship: five against five, fought until one side has nobody left standing.</p></div>
+      <div class="ledger__tag">Melee</div>
+    </div>
+    <div class="ledger__row" data-img="assets/img/u-team.webp">
+      <div class="ledger__num"><span data-count="30">30</span></div>
+      <div class="ledger__body"><h4>Nations at the worlds</h4><p>Around thirty countries sent fighters to the 2026 world championship. From the United States to Australia, national teams travel to fight under their own colours.</p></div>
+      <div class="ledger__tag">Nations</div>
+    </div>
+    <div class="ledger__float" aria-hidden="true"><img alt=""></div>
+  </div>
+</section>
+
+<!-- ═══════════ III. LEX — horizontal rules ═══════════ -->
+<section class="lex" id="lex" data-dark>
+  <div class="lex__pin">
+    <div class="lex__track">
+
+      <div class="lex__intro">
+        <p class="kicker"><span class="kicker__mark">✠</span> Chapter II</p>
+        <h2 class="lex__title">Rules</h2>
+        <p class="lex__sub">Six laws of the list.<br><em>Break one and the marshals step in.</em></p>
+        <div class="lex__arrow">Scroll <i></i></div>
+      </div>
+
+      <article class="law">
+        <div class="law__num">I</div>
+        <div class="law__copy">
+          <h3>Stay standing</h3>
+          <p>Two feet on the ground is fighting. A third point of contact (a knee, a hand, a shoulder) means you are down and out for the round.</p>
+          <span class="law__foot">Rule of three points</span>
+        </div>
+        <figure class="plate plate--pop" style="--ar: 798/1002">
+          <div class="plate__frame"><img src="assets/img/u-takedown.webp" alt="A knight in white drives a polearm at a fallen fighter in yellow"></div>
+          <img class="plate__cut" src="assets/img/u-takedown-cut.webp" alt="">
+          <figcaption><b>Pl. 1</b> The takedown</figcaption>
+        </figure>
+      </article>
+
+      <article class="law">
+        <div class="law__num">II</div>
+        <div class="law__copy">
+          <h3>Never thrust</h3>
+          <p>Thrusts are banned. Swords, axes and poleaxes are swung, hooked and bashed, never driven point-first like a spear.</p>
+          <span class="law__foot">Percussion only</span>
+        </div>
+        <figure class="plate plate--pop" style="--ar: 798/1002">
+          <div class="plate__frame"><img src="assets/img/u-clash.webp" alt="Orange and blue fighters crash together, buckler raised"></div>
+          <img class="plate__cut" src="assets/img/u-clash-cut.webp" alt="">
+          <figcaption><b>Pl. 2</b> Buckler against blade</figcaption>
+        </figure>
+      </article>
+
+      <article class="law">
+        <div class="law__num">III</div>
+        <div class="law__copy">
+          <h3>Mind the forbidden</h3>
+          <p>The neck and throat, the groin, the back of the knees, the feet and ankles are off limits, and so is anyone already down. Some leagues also protect the back of the head and the spine.</p>
+          <span class="law__foot">Prohibited targets</span>
+        </div>
+        <figure class="plate plate--pop" style="--ar: 774/1032">
+          <div class="plate__frame"><img src="assets/img/u-yellow.webp" alt="A fighter in a yellow and black tabard with a barred visor"></div>
+          <img class="plate__cut" src="assets/img/u-yellow-cut.webp" alt="">
+          <figcaption><b>Pl. 3</b> Visor down</figcaption>
+        </figure>
+      </article>
+
+      <article class="law">
+        <div class="law__num">IV</div>
+        <div class="law__copy">
+          <h3>Wrestle freely</h3>
+          <p>Grabs, trips, throws and shield-bashes are all legal. Plenty of knights hit the sand because of a shove, not a sword.</p>
+          <span class="law__foot">Grappling permitted</span>
+        </div>
+        <figure class="plate plate--pop" style="--ar: 798/1002">
+          <div class="plate__frame"><img src="assets/img/u-shove.webp" alt="Two knights grapple in a cloud of dust"></div>
+          <img class="plate__cut" src="assets/img/u-shove-cut.webp" alt="">
+          <figcaption><b>Pl. 4</b> The shove</figcaption>
+        </figure>
+      </article>
+
+      <article class="law">
+        <div class="law__num">V</div>
+        <div class="law__copy">
+          <h3>No points, only survivors</h3>
+          <p>In a melee nobody counts hits. The round ends when one side has no fighters left standing.</p>
+          <span class="law__foot">Last team standing</span>
+        </div>
+        <figure class="plate plate--pop" style="--ar: 798/1002">
+          <div class="plate__frame"><img src="assets/img/u-crowd.webp" alt="A crowd watches a pile of armoured fighters collide at the barrier"></div>
+          <img class="plate__cut" src="assets/img/u-crowd-cut.webp" alt="">
+          <figcaption><b>Pl. 5</b> At the barrier</figcaption>
+        </figure>
+      </article>
+
+      <article class="law">
+        <div class="law__num">VI</div>
+        <div class="law__copy">
+          <h3>Be true to the age</h3>
+          <p>Armour has to be based on historical sources, matched in region and period. Kits are inspected for safety and authenticity before anyone fights.</p>
+          <span class="law__foot">Authenticity check</span>
+        </div>
+        <figure class="plate plate--pop" style="--ar: 670/1194">
+          <div class="plate__frame"><img src="assets/img/u-gibbon.webp" alt="A knight raises a mace behind a painted heater shield"></div>
+          <img class="plate__cut" src="assets/img/u-gibbon-cut.webp" alt="">
+          <figcaption><b>Pl. 6</b> Heraldry in steel</figcaption>
+        </figure>
+      </article>
+
+    </div>
+    <div class="lex__progress"><span>I</span><i><b></b></i><span>VI</span></div>
+  </div>
+</section>
+
+<!-- ═══════════ IV. ARMA — the armoury ═══════════ -->
+<section class="arma" id="arma" data-dark>
+  <div class="arma__pin">
+    <div class="arma__spot"></div>
+    <div class="arma__ghost" aria-hidden="true"><span>Arming sword</span></div>
+
+    <div class="arma__head">
+      <p class="kicker"><span class="kicker__mark">✠</span> Chapter III</p>
+      <h2>Weapons<em>The armoury</em></h2>
+    </div>
+
+    <ol class="arma__index">
+      <li class="is-active"><span>01</span>Arming sword</li>
+      <li><span>02</span>Falchion</li>
+      <li><span>03</span>Axe</li>
+      <li><span>04</span>Mace</li>
+      <li><span>05</span>Longsword</li>
+      <li><span>06</span>Poleaxe</li>
+      <li><span>07</span>Halberd</li>
+      <li><span>08</span>Long axe</li>
+      <li><span>09</span>Heater shield</li>
+      <li><span>10</span>Buckler</li>
+    </ol>
+
+    <div class="arma__weapon"><div class="arma__tilt">
+      <img class="is-active" src="assets/img/wpn-arming-sword.webp" alt="A blunt one-handed buhurt sword" draggable="false">
+      <img src="assets/img/wpn-falchion.webp" alt="A single-edged buhurt falchion" draggable="false">
+      <img src="assets/img/wpn-one-handed-axe.webp" alt="A short one-handed buhurt axe" draggable="false">
+      <img src="assets/img/wpn-mace.webp" alt="A flanged buhurt mace" draggable="false">
+      <img src="assets/img/wpn-longsword.webp" alt="A blunt two-handed buhurt longsword" draggable="false">
+      <img src="assets/img/wpn-poleaxe.webp" alt="A buhurt poleaxe on a taped haft" draggable="false">
+      <img src="assets/img/wpn-halberd.webp" alt="A buhurt halberd on a taped haft" draggable="false">
+      <img src="assets/img/wpn-two-handed-axe.webp" alt="A two-handed buhurt long axe" draggable="false">
+      <img src="assets/img/wpn-heater-shield.webp" alt="A black fabric-covered heater shield" draggable="false">
+      <img src="assets/img/wpn-buckler.webp" alt="A round steel buckler" draggable="false">
+    </div></div>
+
+    <div class="arma__specs">
+      <div class="spec is-active">
+        <h3>Arming sword</h3>
+        <p class="spec__line">The one-handed sword of the list, fought together with a shield.</p>
+        <dl><dt>Length</dt><dd>40 to 110 cm</dd><dt>Weight</dt><dd>Up to 1.9 kg</dd><dt>Edge</dt><dd>2 to 8 mm, rounded</dd></dl>
+      </div>
+      <div class="spec">
+        <h3>Falchion</h3>
+        <p class="spec__line">A single-edged chopper with its weight pushed out towards the tip. Usually paired with a shield.</p>
+        <dl><dt>Length</dt><dd>40 to 110 cm</dd><dt>Weight</dt><dd>Up to 1.9 kg</dd><dt>Edge</dt><dd>2 to 8 mm, rounded</dd></dl>
+      </div>
+      <div class="spec">
+        <h3>Axe</h3>
+        <p class="spec__line">Short and compact. Hooks shield rims and arms, and keeps working in the clinch.</p>
+        <dl><dt>Length</dt><dd>40 to 90 cm</dd><dt>Weight</dt><dd>Up to 1.3 kg</dd><dt>Edge</dt><dd>At least 7 cm long</dd></dl>
+      </div>
+      <div class="spec">
+        <h3>Mace</h3>
+        <p class="spec__line">Light, short and flanged. Fast in close and often carried as a spare.</p>
+        <dl><dt>Length</dt><dd>At least 40 cm</dd><dt>Weight</dt><dd>Up to 1 kg</dd><dt>Head</dt><dd>Pinned through the haft</dd></dl>
+      </div>
+      <div class="spec">
+        <h3>Longsword</h3>
+        <p class="spec__line">Two hands, long reach and big swinging cuts that wrap around a shield.</p>
+        <dl><dt>Length</dt><dd>110 to 140 cm</dd><dt>Weight</dt><dd>Up to 3 kg</dd><dt>Edge</dt><dd>2 to 8 mm, rounded</dd></dl>
+      </div>
+      <div class="spec">
+        <h3>Poleaxe</h3>
+        <p class="spec__line">A broad axe blade on a two-handed haft. Built to hook, shove and sweep in team fights.</p>
+        <dl><dt>Length</dt><dd>Over 91 cm</dd><dt>Weight</dt><dd>Up to 3 kg</dd><dt>Back of head</dt><dd>Max. 2 cm, no hammers</dd></dl>
+      </div>
+      <div class="spec">
+        <h3>Halberd</h3>
+        <p class="spec__line">A wide, hooked blade on a two-handed haft, for pulling shields down and fighters off balance.</p>
+        <dl><dt>Length</dt><dd>Over 91 cm</dd><dt>Weight</dt><dd>Up to 3 kg</dd><dt>Edge</dt><dd>At least 7 cm long</dd></dl>
+      </div>
+      <div class="spec">
+        <h3>Long axe</h3>
+        <p class="spec__line">Two hands on the haft and a wide blade swinging at the end of it. A heavy hitter in team fights.</p>
+        <dl><dt>Length</dt><dd>Over 91 cm</dd><dt>Weight</dt><dd>Up to 3 kg</dd><dt>Haft</dt><dd>Wood</dd></dl>
+      </div>
+      <div class="spec">
+        <h3>Heater shield</h3>
+        <p class="spec__line">Wood under fabric with a leather-bound rim, strapped to the forearm for duels and team fights.</p>
+        <dl><dt>Weight</dt><dd>Up to 5 kg</dd><dt>Rim</dt><dd>Leather or rawhide</dd><dt>Shape</dt><dd>From historical sources</dd></dl>
+      </div>
+      <div class="spec">
+        <h3>Buckler</h3>
+        <p class="spec__line">A small steel fist shield, held at arm's length in sword-and-buckler duels.</p>
+        <dl><dt>Diameter</dt><dd>Up to 40 cm</dd><dt>Weight</dt><dd>Up to 5 kg</dd><dt>Grip</dt><dd>Steel centre grip</dd></dl>
+      </div>
+      <p class="arma__note">Shown: buhurt weapons by Medieval Extreme. Limits from the IMCF rulebook (2020 edition); other leagues set slightly different numbers.</p>
+    </div>
+
+    <div class="arma__counter"><b>01</b> / 10</div>
+  </div>
+</section>
+
+<!-- ═══════════ V. HARNISCH — anatomy ═══════════ -->
+<section class="harnisch vellum" id="armour">
+  <div class="wrap">
+    <header class="chapter-head">
+      <span class="chapter-head__num">IV</span>
+      <span class="chapter-head__label">The Armour</span>
+      <span class="chapter-head__rule"></span>
+      <span class="chapter-head__aside">fol. 4v</span>
+    </header>
+  </div>
+
+  <div class="anatomy">
+    <div class="anatomy__intro">
+      <h2>Anatomy<br>of a <em>knight</em></h2>
+      <p>A buhurt harness is dozens of hardened steel plates, riveted and strapped over a padded gambeson. It has to take a full-power poleaxe swing and still let you wrestle.</p>
+      <div class="anatomy__weight">
+        <span>Weight carried</span>
+        <b><i data-count="30">30</i> kg</b>
+        <div class="anatomy__bar"><i></i></div>
+      </div>
+    </div>
+
+    <div class="anatomy__figure">
+      <img src="assets/img/kit-protector.webp" alt="A fighter in a full buhurt harness: visored bascinet with mail aventail, brigandine, plate arms, gauntlets and plate legs" draggable="false">
+      <svg class="anatomy__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+      <ul class="anatomy__pins">
+        <li data-x="62" data-y="8" data-side="r"><b>Bascinet</b><span>Closed helmet of hardened steel, heavily padded inside</span></li>
+        <li data-x="64" data-y="19" data-side="r"><b>Aventail</b><span>Riveted mail hung from the helmet over the neck</span></li>
+        <li data-x="14" data-y="22" data-side="l"><b>Spaulder</b><span>Plates over the shoulder</span></li>
+        <li data-x="8" data-y="30" data-side="l"><b>Rerebrace</b><span>Upper-arm plate</span></li>
+        <li data-x="6" data-y="37" data-side="l"><b>Couter</b><span>The elbow cop</span></li>
+        <li data-x="70" data-y="36" data-side="r"><b>Brigandine</b><span>Steel plates riveted inside a fabric coat</span></li>
+        <li data-x="22" data-y="45" data-side="l"><b>Vambrace</b><span>Forearm tube</span></li>
+        <li data-x="55" data-y="53" data-side="r"><b>Gambeson</b><span>Quilted padding worn under everything</span></li>
+        <li data-x="32" data-y="55" data-side="l"><b>Gauntlet</b><span>Steel hand armour, often a mitten</span></li>
+        <li data-x="64" data-y="62" data-side="r"><b>Cuisse</b><span>Thigh defence</span></li>
+        <li data-x="36" data-y="71" data-side="l"><b>Poleyn</b><span>The knee, with a side wing</span></li>
+        <li data-x="42" data-y="84" data-side="l"><b>Greave</b><span>Shin and calf</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="helms">
+    <p class="helms__head"><span class="pilcrow">¶</span> Choose your face</p>
+    <div class="helms__row">
+      <figure><img loading="lazy" decoding="async" src="assets/img/helm-hounskull-bascinet.webp" alt="A hounskull bascinet with a pointed, perforated visor and mail aventail" draggable="false"><figcaption><b>Hounskull</b> Pointed "pig-face" visor, after a 14th-century original</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/img/helm-klappvisor-bascinet.webp" alt="A klappvisor bascinet with a brow-hinged visor and mail aventail" draggable="false"><figcaption><b>Klappvisor</b> Visor hinged at the brow, after a Nuremberg original</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/img/helm-wolfrib.webp" alt="A wolfrib bascinet with a barred visor and fabric aventail" draggable="false"><figcaption><b>Wolfrib</b> Barred visor for wide vision, a modern buhurt favourite</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/img/helm-great-helm.webp" alt="A great helm with a perforated face plate and padded aventail" draggable="false"><figcaption><b>Great helm</b> Closed helm with a fixed, perforated face plate</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/img/helm-armet.webp" alt="An armet with a slotted, perforated visor and mail aventail" draggable="false"><figcaption><b>Armet</b> Closed 15th-century helmet with a visor</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/img/helm-sallet.webp" alt="An Italian sallet with visor and mail aventail" draggable="false"><figcaption><b>Sallet</b> Italian sallet with a visor, 15th century</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/img/helm-barbute.webp" alt="An Italian barbute with a T-shaped face opening and mail aventail" draggable="false"><figcaption><b>Barbute</b> Italian, with a T-shaped face opening</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/img/helm-bascinet.webp" alt="An open bascinet with a mail aventail covering the face" draggable="false"><figcaption><b>Bascinet</b> Open bascinet, mail drawn across the face</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/img/helm-nasal-bascinet.webp" alt="A bascinet with a nasal bar and mail aventail" draggable="false"><figcaption><b>Nasal bascinet</b> A bar over the nose, mail over the rest</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/img/helm-eastern-helmet.webp" alt="A fluted Eastern European helmet with a half-mask and mail aventail" draggable="false"><figcaption><b>Eastern helmet</b> Fluted dome and half-mask, after a find from Nikolskoye</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ VI. MELEE — formations ═══════════ -->
+<section class="melee" id="melee" data-dark>
+  <div class="melee__bg"><img src="assets/img/melee.webp" alt="A mass of armoured fighters grappling in a group battle"></div>
+  <div class="melee__inner">
+    <div class="melee__copy">
+      <p class="kicker"><span class="kicker__mark">✠</span> Chapter V</p>
+      <h2 class="melee__title">The<br>Melee</h2>
+      <p class="melee__lede">Buhurt is a team sport. Formations crash into each other at a run, wrestlers drag enemies to the sand, and polearms clear a path. Pick a size and sound the charge.</p>
+      <div class="melee__tabs" role="tablist">
+        <button data-n="1" role="tab">1 v 1</button>
+        <button data-n="5" role="tab" class="is-active">5 v 5</button>
+        <button data-n="12" role="tab">12 v 12</button>
+        <button data-n="30" role="tab">30 v 30</button>
+        <button data-n="150" role="tab">150 v 150</button>
+      </div>
+      <button class="melee__charge" type="button"><span>Charge</span></button>
+    </div>
+    <div class="melee__field">
+      <div class="melee__banner melee__banner--g"><b>Gules</b><span data-team="g">5</span></div>
+      <canvas class="melee__canvas"></canvas>
+      <div class="melee__banner melee__banner--a"><span data-team="a">5</span><b>Azure</b></div>
+      <div class="melee__result" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ VII. GALLERY ═══════════ -->
+<section class="gallery" id="list" data-dark>
+  <div class="gallery__head">
+    <p class="kicker"><span class="kicker__mark">✠</span> Chapter VI</p>
+    <h2>From the <em>List</em></h2>
+  </div>
+  <div class="gallery__cols">
+    <div class="gallery__col" data-speed="-0.12">
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-duel-strike-01.webp" width="1800" height="1200" alt="Two knights square up, a sword raised above the shields" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-fighter-down-01.webp" width="1201" height="1800" alt="A fighter lies thrown in the sand while the fight goes on" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-arena-duel-crowd.webp" width="1800" height="1350" alt="A duel inside a packed wooden arena" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-clinch-shield-wall.webp" width="1800" height="1382" alt="Two fighters grapple at the fence, shields and tabards tangled" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-poleaxe-duel-01.webp" width="1800" height="1800" alt="Two fighters swing poleaxes at each other on grass" draggable="false"></figure>
+    </div>
+    <div class="gallery__col" data-speed="0.1">
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-mass-battle-12v12-01.webp" width="1800" height="1196" alt="A twelve on twelve melee packed against the fence" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-eye-to-eye.webp" width="1201" height="1800" alt="Two helmets pressed face to face in a clinch" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-helmets-clash-close.webp" width="1800" height="1355" alt="Bascinets crash together in a pile at the barrier" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-duel-crowd-acl.webp" width="1800" height="1200" alt="A sword strike lands in a duel in front of a packed crowd" draggable="false"></figure>
+    </div>
+    <div class="gallery__col" data-speed="-0.2">
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-clinch-portrait-01.webp" width="1350" height="1800" alt="Two knights locked in a clinch against the rail" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-takedown-sand-01.webp" width="1800" height="1148" alt="A fighter goes down in a sand list as an axe is raised" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-mass-battle-clinch-01.webp" width="1800" height="1200" alt="A group melee, several knights locked together" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-mass-battle-botn-2015.webp" width="1800" height="1200" alt="A mass melee of heraldic tabards at Battle of the Nations 2015" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-duel-swords-crossed.webp" width="1500" height="999" alt="Two duellists cross swords above their heads" draggable="false"></figure>
+      <figure class="g"><img loading="lazy" decoding="async" src="assets/img/gal-team-fight-lions-vs-taurus-02.webp" width="1800" height="1196" alt="Two teams collide over the wooden rail" draggable="false"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ VIII. FINALE ═══════════ -->
+<section class="finale" data-dark>
+  <div class="finale__bg"><img loading="lazy" decoding="async" src="assets/img/downed.webp" alt="A knight walks away from a fallen opponent"></div>
+  <div class="finale__copy">
+    <p class="kicker"><span class="kicker__mark">✠</span> The end</p>
+    <h2 class="finale__title"><span>Stay</span><span>standing.</span></h2>
+    <p class="finale__line">History is written by the knight who doesn't fall.</p>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Buhurt ✠ Full contact ✠ </span>
+    </div>
+  </div>
+</section>
+
+<footer class="colophon vellum">
+  <div class="wrap colophon__grid">
+    <p class="colophon__mark">Buhurt</p>
+    <p class="colophon__note"><span>A fan-made project celebrating the sport of buhurt. Not affiliated with any federation, team or event.</span><span>All photographs, names and trademarks are the copyright of their respective owners.</span></p>
+  </div>
+</footer>
+
+</main>
+
+<!-- lightbox -->
+<div class="lightbox" aria-hidden="true">
+  <img alt="">
+  <p class="lightbox__cap"></p>
+  <button class="lightbox__close" type="button" aria-label="Close">Close ✕</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
